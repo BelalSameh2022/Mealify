@@ -1,0 +1,275 @@
+@media screen and (max-width: 300px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+/*^========> Container <========*/
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    padding-inline: 15px;
+  }
+}
+
+/*^========> Navbar <========*/
+@media screen and (max-width: 1200px) {
+  nav .nav-links {
+    --inline-gap: 0px;
+    --block-gap: 15px;
+    position: absolute;
+    z-index: 99999;
+    width: 350px;
+    height: 100vh;
+    background-color: var(--color-light);
+    font-size: 1.1rem;
+    border-left: 2px solid #f1f1f1;
+    top: 0;
+    right: -100%;
+    flex-direction: column;
+    transition: transform 400ms;
+  }
+
+
+
+  :root:has(#o-c-menu:checked) nav .nav-links {
+    right: -100%;
+  }
+
+  :root:has(#o-c-menu:checked) .overly {
+    display: block;
+  }
+
+  :root:has(#o-c-menu:checked) nav .nav-links {
+    right: 0;
+  }
+
+  nav .nav-links .close-icon {
+    display: block;
+    padding: 10px 15px 5px;
+    color: var(--color-tertiary);
+    transition: color 400ms;
+  }
+
+  nav .nav-links .close-icon:hover {
+    color: var(--color-default);
+  }
+
+  nav .nav-links a:not(.active):hover::before {
+    width: 0px;
+  }
+
+  body:not(body:has(:target)) li a[href="#home"]::before,
+  body:has(.home:target) li a[href="#home"]::before,
+  body:has(.contact:target) li a[href="#contact"]::before,
+  body:has(.gallery:target) li a[href="#gallery"]::before,
+  body:has(.chefs:target) li a[href="#chefs"]::before {
+    width: 0;
+  }
+
+  nav .nav-links li {
+    margin-bottom: 20px;
+  }
+
+  nav .nav-links a {
+    width: 100%;
+    padding: calc(var(--block-gap) * 1.5) 10px;
+  }
+
+  nav .nav-links a::before {
+    bottom: 2px;
+  }
+
+  nav .menu-icon {
+    display: block;
+  }
+
+  nav .mode-group {
+    margin-left: auto;
+    margin-right: 20px;
+  }
+}
+
+/*^========> Header <========*/
+@media screen and (min-width: 1200px) {
+  header {
+    min-height: 100vh;
+    margin: -25px 0;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  header .container {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+
+  header .container>* {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  header .btn-main {
+    --border-radius: 100vh;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header-content .btn-group {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/*^========> Chefs <========*/
+@media screen and (max-width: 992px) {
+  .chefs-cards .card {
+    width: 48%;
+    margin-bottom: 35px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .chefs-cards .card {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+}
+
+/*^========> Gallery <========*/
+@media screen and (max-width: 1400px) {
+  .gallery-photos {
+    height: 1004px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .gallery-photos {
+    height: 845px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .gallery-photos {
+    height: 1424px;
+  }
+
+  .gallery-photos picture {
+    width: calc(calc(100% - var(--gap)) / 2);
+  }
+
+  .gallery .pizza {
+    order: 1;
+  }
+
+  .gallery .fried {
+    order: 6;
+  }
+
+  .gallery .omelette {
+    order: 4;
+  }
+
+  .gallery .kofta {
+    order: 7;
+  }
+
+  .gallery .burger {
+    order: 2;
+  }
+
+  .gallery .pizza-slices {
+    order: 3;
+  }
+
+  .gallery .steak {
+    order: 5;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .gallery-photos {
+    height: auto;
+  }
+
+  .gallery-photos picture {
+    width: 100%;
+  }
+}
+
+/*^========> Contacts <========*/
+@media screen and (max-width: 992px) {
+  .contact .input-group input {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact .details>div {
+    width: 100%;
+  }
+}
+
+/*^========> Footer <========*/
+
+@media screen and (max-width: 1200px) {
+  footer .container :is(.about, .contact-details) {
+    width: 48%;
+    order: 1;
+    margin-bottom: 20px;
+  }
+
+  footer .container :is(.subscription) {
+    width: 100%;
+    order: 2;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  footer .container :is(.about, .contact-details, .subscription) {
+    width: 100%;
+    order: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  footer .sunscription-group {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+}
